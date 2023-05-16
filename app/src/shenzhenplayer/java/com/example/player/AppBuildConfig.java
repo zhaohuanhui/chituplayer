@@ -1,6 +1,6 @@
 package com.example.player;
 
-public class BuildConfig {
+public class AppBuildConfig {
     public static final String APP_NAME = "深圳播放器";
     public static final String APPLICATION_ID = "com.example.shenzhenplayer";
     public static final String BUILD_TYPE = "debug";

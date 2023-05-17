@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/selector_home_btn"
+        android:title="Home" />
+    <item
+        android:id="@+id/film_library"
+        android:icon="@drawable/selector_film_library_btn"
+        android:title="Film library"/>
+    <item
+        android:id="@+id/personal"
+        android:icon="@drawable/selector_personal_btn"
+        android:title="Personal"/>
+</menu>

@@ -1,9 +1,11 @@
 package com.example.player.main.navigation.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.player.R;
+import com.example.player.main.navigation.home.search.SearchActivity;
 import com.example.player.main.navigation.home.tab.HomeTabFragment;
 import com.example.player.view.ScrollTextView;
 import com.google.android.material.tabs.TabLayout;
@@ -29,6 +32,7 @@ public class HomeFragment extends Fragment {
     private TabLayout tabLayout;
     private NoScrollViewPager viewPager;
     private ScrollTextView  scrollTextView;
+    RelativeLayout rl_search;
     private String[] tabTitleList = new String[]{"Now Playing","Upcoming"};
     private ArrayList<Fragment> tabFragmetList = new ArrayList<Fragment>();
     public static HomeFragment newInstance(String name, String arg) {
@@ -47,8 +51,20 @@ public class HomeFragment extends Fragment {
         findViewById(inflate);
         initFragment();
         initViewPage();
+        onClick();
         return inflate;
     }
+
+    private void onClick() {
+        rl_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void initFragment() {
         tabFragmetList.clear();
         HomeTabFragment NowPlayingFragment = HomeTabFragment.newInstance("Now Playing", "");
@@ -74,6 +90,7 @@ public class HomeFragment extends Fragment {
         tabLayout = inflate.findViewById(R.id.home_tab);
         viewPager = inflate.findViewById(R.id.home_vp);
         scrollTextView=inflate.findViewById(R.id.tv_scroll);
+        rl_search=inflate.findViewById(R.id.rl_search);
     }
 
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {

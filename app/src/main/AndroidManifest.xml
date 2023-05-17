@@ -19,6 +19,9 @@
         <activity
             android:theme="@style/Theme.Chituplayer"
             android:name=".main.MainActivity"/>
+        <activity
+            android:theme="@style/Theme.Chituplayer"
+            android:name=".main.navigation.home.search.SearchActivity"/>
     </application>
 
 </manifest>

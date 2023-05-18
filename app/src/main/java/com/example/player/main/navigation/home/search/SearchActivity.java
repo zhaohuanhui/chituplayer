@@ -9,10 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.player.R;
-import com.example.player.view.ToastUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -160,6 +160,7 @@ public class FavoritesActivity  extends AppCompatActivity {
                 for(int i=0;i<favoritesBeanList.size();i++){
                     favoritesBeanList.get(i).isCheck=true;
                 }
+                editeTotals=favoritesBeanList.size();
                 favoritesAdapter.notifyDataSetChanged();
             }
         });

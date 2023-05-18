@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.player.R;
+import com.example.player.view.ToastUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,8 +84,9 @@ public class SearchActivity extends AppCompatActivity {
                 tv_history.setVisibility(View.VISIBLE);
                 ll_del.setVisibility(View.VISIBLE);
                 ll_Expand.setVisibility(View.VISIBLE);
+                if (et_search.getText().toString().trim().length() > 0) {
                 mData.add(0,et_search.getText().toString());
-                searchHistoryAdapter.notifyDataSetChanged();
+                searchHistoryAdapter.notifyDataSetChanged();}
             }
         });
     }

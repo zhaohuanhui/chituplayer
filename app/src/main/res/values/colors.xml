@@ -18,6 +18,8 @@
     <color name="colorF8F4F4">#FFF8F4F4</color>
     <color name="colorF0F0F0">#FFF0F0F0</color>
     <color name="colorFE8000">#FFFE8000</color>
+    <color name="colorFFFFFFF">#FFFFFFFF</color>
+    <color name="color000000">#000000</color>
 
 <!--线-->
     <color name="colorEFEFEF">#FFEFEFEF</color>

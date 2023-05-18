@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import com.example.player.R;
 import com.example.player.main.navigation.film_library.FilmLibraryFragment;
 import com.example.player.main.navigation.home.HomeFragment;
-import com.example.player.main.navigation.PersonalFragment;
+import com.example.player.main.navigation.personal.PersonalFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;

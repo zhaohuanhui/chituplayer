@@ -28,7 +28,6 @@ import java.util.Objects;
 import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 
 public class HomeFragment extends Fragment {
-
     private static final String NAME = "name";
     private static final String ARG = "arg";
     private TabLayout tabLayout;
@@ -91,7 +90,7 @@ public class HomeFragment extends Fragment {
         scrollTextView.startScroll();
     }
     private void initViewPage() {
-        HomeFragmentPagerAdapter homeFragmentPagerAdapter = new HomeFragmentPagerAdapter(Objects.requireNonNull(getActivity()).getSupportFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,tabFragmetList );
+        HomeFragmentPagerAdapter homeFragmentPagerAdapter = new HomeFragmentPagerAdapter(requireActivity().getSupportFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,tabFragmetList );
         viewPager.setOffscreenPageLimit(tabFragmetList.size());
         viewPager.setAdapter(homeFragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);

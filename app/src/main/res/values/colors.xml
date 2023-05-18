@@ -20,7 +20,7 @@
     <color name="colorFE8000">#FFFE8000</color>
     <color name="colorFFFFFFF">#FFFFFFFF</color>
     <color name="color000000">#000000</color>
-
+    <color name="colorB7B7B7">#FFB7B7B7</color>
 <!--线-->
     <color name="colorEFEFEF">#FFEFEFEF</color>
 </resources>

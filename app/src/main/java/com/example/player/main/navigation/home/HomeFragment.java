@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.player.R;
+import com.example.player.main.navigation.home.favorites.FavoritesActivity;
 import com.example.player.main.navigation.home.search.SearchActivity;
 import com.example.player.main.navigation.home.tab.HomeTabFragment;
 import com.example.player.view.ScrollTextView;
@@ -32,7 +34,8 @@ public class HomeFragment extends Fragment {
     private TabLayout tabLayout;
     private NoScrollViewPager viewPager;
     private ScrollTextView  scrollTextView;
-    RelativeLayout rl_search;
+    private  RelativeLayout rl_search;
+    private  LinearLayout ll_favorites;
     private String[] tabTitleList = new String[]{"Now Playing","Upcoming"};
     private ArrayList<Fragment> tabFragmetList = new ArrayList<Fragment>();
     public static HomeFragment newInstance(String name, String arg) {
@@ -60,6 +63,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ll_favorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(), FavoritesActivity.class);
                 startActivity(intent);
             }
         });
@@ -91,6 +102,7 @@ public class HomeFragment extends Fragment {
         viewPager = inflate.findViewById(R.id.home_vp);
         scrollTextView=inflate.findViewById(R.id.tv_scroll);
         rl_search=inflate.findViewById(R.id.rl_search);
+        ll_favorites=inflate.findViewById(R.id.ll_favorites);
     }
 
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {

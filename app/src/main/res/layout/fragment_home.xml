@@ -44,12 +44,17 @@
                 </com.example.player.view.ScrollTextView>
             </LinearLayout>
         </RelativeLayout>
-        <ImageView
+        <LinearLayout
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
-            android:background="@drawable/ic_collect"/>
+            android:id="@+id/ll_favorites"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:background="@drawable/ic_collect"/>
+        </LinearLayout>
     </LinearLayout>
    <com.google.android.material.tabs.TabLayout
        app:tabIndicator="@drawable/shape_tab_indicator"

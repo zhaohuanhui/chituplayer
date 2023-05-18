@@ -46,17 +46,12 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content">
-                    <com.example.player.view.ScrollTextView
-                        android:layout_gravity="center_vertical"
-                        android:id="@+id/tv_scroll"
-                        android:layout_marginLeft="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    </com.example.player.view.ScrollTextView>
                     <EditText
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/et_search"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="null"
+                        android:background="@android:color/transparent"
                         ></EditText>
                 </RelativeLayout>
             </LinearLayout>
@@ -80,10 +75,11 @@
 
     <LinearLayout
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/tv_history"
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search history"
@@ -95,18 +91,54 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
         </TextView>
-        <ImageView
-            android:layout_gravity="center_vertical"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:background="@drawable/ic_del">
-        </ImageView>
-        <TextView
+        <LinearLayout
+            android:id="@+id/ll_del"
+            android:padding="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"
-            android:textSize="16dp"
-            android:textColor="@color/color999999">
-        </TextView>
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/ic_del">
+            </ImageView>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textSize="16dp"
+                android:textColor="@color/color999999">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_Expand"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expand">
+            </TextView>
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/ic_expand"/>
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

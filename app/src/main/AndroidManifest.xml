@@ -22,6 +22,9 @@
         <activity
             android:theme="@style/Theme.Chituplayer"
             android:name=".main.navigation.home.search.SearchActivity"/>
+        <activity
+            android:theme="@style/Theme.Chituplayer"
+            android:name=".main.navigation.home.favorites.FavoritesActivity"/>
     </application>
 
 </manifest>

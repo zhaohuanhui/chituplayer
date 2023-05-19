@@ -4,7 +4,9 @@
     android:layout_height="wrap_content">
     <LinearLayout
         android:id="@+id/ll_bg"
-        android:layout_margin="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"

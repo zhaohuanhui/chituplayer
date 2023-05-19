@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
@@ -18,12 +18,14 @@
         </ImageView>
         <TextView
             android:id="@+id/tv_title"
+            android:layout_marginTop="2dp"
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:layout_below="@+id/iv_cover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black">
+            android:textSize="14dp"
+            android:textColor="@color/color22222">
         </TextView>
     </RelativeLayout>
 </LinearLayout>

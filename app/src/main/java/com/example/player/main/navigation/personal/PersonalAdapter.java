@@ -33,8 +33,10 @@ public class PersonalAdapter  extends RecyclerView.Adapter<PersonalAdapter.ViewH
     @Override
     public void onBindViewHolder(@NonNull PersonalAdapter.ViewHolder holder, int position) {
         holder.textView.setText(mData.get(position));
-        if (position==mData.size()){
+        if (position==mData.size()-1){
             holder.iv_cover.setBackgroundResource(R.drawable.ic_add);
+        }else {
+            holder.iv_cover.setBackgroundResource(R.drawable.ic_01);
         }
     }
 

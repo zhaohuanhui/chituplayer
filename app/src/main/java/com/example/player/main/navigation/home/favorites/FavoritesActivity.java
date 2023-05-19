@@ -93,6 +93,10 @@ class FavoritesBean{
         isCheck = check;
     }
 }
+
+/**
+ * 收藏记录
+ */
 public class FavoritesActivity  extends AppCompatActivity {
     private RecyclerView rv_favorites;
     private FavoritesAdapter favoritesAdapter;
@@ -101,6 +105,7 @@ public class FavoritesActivity  extends AppCompatActivity {
     private Boolean isEdit=false;
     private List<FavoritesBean> favoritesBeanList = new ArrayList<>();
     private int editeTotals=0;
+    private boolean isSelectAll=false;
     public Boolean getEdit() {
         return isEdit;
     }
@@ -157,10 +162,21 @@ public class FavoritesActivity  extends AppCompatActivity {
         ll_selectAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(int i=0;i<favoritesBeanList.size();i++){
-                    favoritesBeanList.get(i).isCheck=true;
+                if(!isSelectAll){
+                    isSelectAll=true;
+                    for(int i=0;i<favoritesBeanList.size();i++){
+                        favoritesBeanList.get(i).isCheck=true;
+                    }
+                    editeTotals=favoritesBeanList.size();
+                    tv_del.setText("Delete ("+ editeTotals+")");
+                }else{
+                    isSelectAll=false;
+                    for(int i=0;i<favoritesBeanList.size();i++){
+                        favoritesBeanList.get(i).isCheck=false;
+                    }
+                    editeTotals=0;
+                    tv_del.setText("Delete ("+ editeTotals+")");
                 }
-                editeTotals=favoritesBeanList.size();
                 favoritesAdapter.notifyDataSetChanged();
             }
         });

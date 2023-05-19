@@ -40,6 +40,9 @@ class TagBean{
     }
 }
 
+/**
+ * 电影库
+ */
 public class FilmLibraryFragment extends Fragment {
     private  FilmLibraryLabelAdapter moviceClassAdapter,regionalClassAdapter,regionalTagAdapter,regionalEvaluatueAdapter,regionalYearAdapter;
     private  FilmLibraryCoverAdapter filmLibraryCoverAdapter;

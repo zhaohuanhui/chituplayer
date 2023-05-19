@@ -9,8 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/LunchTheme">
-        <activity android:name="com.example.player.LunchActivity">
+        android:theme="@style/Theme.Chituplayer">
+        <activity
+            android:theme="@style/LunchTheme"
+            android:name="com.example.player.LunchActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,14 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/Theme.Chituplayer"
             android:name=".main.MainActivity"/>
         <activity
-            android:theme="@style/Theme.Chituplayer"
             android:name=".main.navigation.home.search.SearchActivity"/>
         <activity
-            android:theme="@style/Theme.Chituplayer"
             android:name=".main.navigation.home.favorites.FavoritesActivity"/>
+        <activity
+            android:name=".login.LoginActivity"/>
+        <activity
+            android:name=".main.navigation.personal.setting.SetCenterActivity"/>
     </application>
 
 </manifest>

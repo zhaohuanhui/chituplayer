@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
+                android:id="@+id/ll_setting"
                 android:padding="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
@@ -27,18 +28,22 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
     <RelativeLayout
+        android:id="@+id/rl_isLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:id="@+id/ll_portrait"
-            android:padding="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
             <ImageView
+                android:id="@+id/iv_portrait"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:background="@drawable/ic_portrait">
-            </ImageView>
+                android:background="@drawable/ic_portrait"
+                android:baselineAligned="false"></ImageView>
         </LinearLayout>
             <LinearLayout
                 android:layout_centerVertical="true"
@@ -48,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tv_name"
                     android:layout_marginBottom="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -55,14 +61,46 @@
                     android:textColor="@color/color333333"
                     android:text="Log in Register">
                 </TextView>
-                <TextView
+                <LinearLayout
+
+                    android:id="@+id/ll_useId"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Log in to view more content"
-                    android:textSize="13dp"
-                    android:textColor="@color/color999999">
-                </TextView>
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_useId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Log in to view more content"
+                        android:textSize="13dp"
+                        android:textColor="@color/color999999">
+                    </TextView>
+                </LinearLayout>
             </LinearLayout>
+        <LinearLayout
+            android:visibility="invisible"
+            android:id="@+id/ll_edit"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_personal_edit_bg">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color666666"
+                android:textSize="12dp"
+                android:text="Edit">
+            </TextView>
+        </LinearLayout>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"

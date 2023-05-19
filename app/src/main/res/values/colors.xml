@@ -10,17 +10,26 @@
     <!--主色-->
     <color name="colorPrimary">#FFE5362C</color>
     <color name="colorF95959">#FFF95959</color>
-    <color name="colorF5F5F5">#FFF5F5F5</color>
-    <color name="color999999">#FF999999</color>
-    <color name="color666666">#FF666666</color>
-    <color name="color333333">#FF333333</color>
+
+    <color name="colorFE8000">#FFFE8000</color>
+
+    <color name="color1877F2">#FF1877F2</color>
+
+    <color name="color000000">#000000</color>
     <color name="color22222">#FF222222</color>
+    <color name="color333333">#FF333333</color>
+
+
+    <color name="color666666">#FF666666</color>
+    <color name="color999999">#FF999999</color>
+    <color name="colorE2E2E2">#FFE2E2E2</color>
+    <color name="colorB7B7B7">#FFB7B7B7</color>
+
+    <color name="colorF5F5F5">#FFF5F5F5</color>
     <color name="colorF8F4F4">#FFF8F4F4</color>
     <color name="colorF0F0F0">#FFF0F0F0</color>
-    <color name="colorFE8000">#FFFE8000</color>
+    <color name="colorF7F7F7">#FFF7F7F7</color>
     <color name="colorFFFFFFF">#FFFFFFFF</color>
-    <color name="color000000">#000000</color>
-    <color name="colorB7B7B7">#FFB7B7B7</color>
 <!--线-->
     <color name="colorEFEFEF">#FFEFEFEF</color>
 </resources>

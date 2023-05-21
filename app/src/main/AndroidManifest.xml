@@ -30,6 +30,7 @@
             android:name=".login.LoginActivity"/>
         <activity
             android:name=".main.navigation.personal.setting.SetCenterActivity"/>
+        <activity android:name=".main.navigation.personal.histrory_record.HistoryRecordActivity"/>
     </application>
 
 </manifest>

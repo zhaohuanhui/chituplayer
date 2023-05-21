@@ -86,11 +86,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(et_userName.getText().toString().trim().length()==0){
-                    ToastUtil.errorShortToast("请输入账号");
+                    ToastUtil.errorShortToast("Please enter account number");
                     return;
                 }
                 if(et_password.getText().toString().trim().length()==0){
-                    ToastUtil.errorShortToast("请输入密码");
+                    ToastUtil.errorShortToast("enter your PIN");
                     return;
                 }
                 UserBean userBean = new UserBean("ikun","9475863748","qq123456","abc123");

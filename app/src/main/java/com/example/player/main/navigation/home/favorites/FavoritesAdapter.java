@@ -45,8 +45,8 @@ public class FavoritesAdapter   extends RecyclerView.Adapter<FavoritesAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull FavoritesAdapter.ViewHolder holder, int position) {
 //        holder.textView.setText(mData.get(position));
-        FavoritesActivity favoritesActivity = (FavoritesActivity) context;
-        Boolean isEdit = favoritesActivity.getEdit();
+        FavoritesActivity activity = (FavoritesActivity) context;
+        Boolean isEdit = activity.getEdit();
         if (mData.get(position).isCheck){
             holder.iv_isCheck.setBackgroundResource(R.drawable.ic_ischeck_y);
         }else {

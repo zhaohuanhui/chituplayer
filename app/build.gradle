@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.chituplayer"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
@@ -45,7 +45,7 @@ android {
         HdMoviesBoxPro{
             applicationId = "com.example.hd_movies_box_pro"
             signingConfig signingConfigs.HdMoviesBoxPro
-            buildConfigField 'String', 'APP_NAME', '"HD Movies Box Pro"'
+
         }
     }
 
@@ -64,6 +64,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
     implementation 'com.github.GrenderG:Toasty:1.5.2'
     implementation 'com.google.code.gson:gson:2.10.1'
+//    implementation 'com.google.android.exoplayer:exoplayer:2.17.1'
 }

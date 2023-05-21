@@ -21,6 +21,7 @@ import com.example.player.App;
 import com.example.player.R;
 import com.example.player.login.LoginActivity;
 import com.example.player.login.UserBean;
+import com.example.player.main.navigation.personal.histrory_record.HistoryRecordActivity;
 import com.example.player.main.navigation.personal.setting.SetCenterActivity;
 import com.example.player.util.SP;
 import com.example.player.util.SpKey;
@@ -32,7 +33,7 @@ import java.util.List;
 public class PersonalFragment extends Fragment {
     private List<String> mData = new ArrayList<>();
     private RecyclerView  rv_personal;
-    private LinearLayout ll_useId,ll_edit,ll_setting;
+    private LinearLayout ll_useId,ll_edit,ll_setting,ll_more;
     private RelativeLayout rl_isLogin;
     private TextView tv_name,tv_useId;
     private ImageView iv_portrait;
@@ -105,6 +106,13 @@ public class PersonalFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        ll_more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), HistoryRecordActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initAdapter() {
@@ -126,5 +134,6 @@ public class PersonalFragment extends Fragment {
         ll_useId=inflate.findViewById(R.id.ll_useId);
         ll_edit=inflate.findViewById(R.id.ll_edit);
         ll_setting=inflate.findViewById(R.id.ll_setting);
+        ll_more=inflate.findViewById(R.id.ll_more);
     }
 }

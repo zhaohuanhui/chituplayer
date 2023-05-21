@@ -1,26 +1,22 @@
-package com.example.player.main.navigation.home.favorites;
+package com.example.player.main.navigation.personal.histrory_record;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.player.R;
+import com.example.player.main.navigation.home.favorites.FavoritesActivity;
 import com.example.player.view.DelDialog;
 import com.example.player.view.ToastUtil;
 
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-class FavoritesBean{
+class HistoryRecordBean{
     String TitleName;
     String type;
     String  actorName;
@@ -28,7 +24,7 @@ class FavoritesBean{
     String score;
     boolean isFavorites;
     boolean isCheck;
-    public FavoritesBean(String titleName, String type, String actorName, String describe, String score, boolean isFavorites,boolean isCheck) {
+    public HistoryRecordBean(String titleName, String type, String actorName, String describe, String score, boolean isFavorites,boolean isCheck) {
         TitleName = titleName;
         this.type = type;
         this.actorName = actorName;
@@ -93,42 +89,38 @@ class FavoritesBean{
         isCheck = check;
     }
 }
-
-/**
- * 收藏记录
- */
-public class FavoritesActivity  extends AppCompatActivity {
-    private RecyclerView rv_favorites;
-    private FavoritesAdapter favoritesAdapter;
+public class HistoryRecordActivity extends AppCompatActivity {
+    HistoryRecordAdapter historyRecordAdapter;
     private LinearLayout ll_back,ll_edit,ll_edit_bottom,ll_selectAll,ll_del;
     private TextView tv_del,tv_edit;
     private Boolean isEdit=false;
-    private List<FavoritesBean> favoritesBeanList = new ArrayList<>();
+    private RecyclerView rv_history_record;
+    private List<HistoryRecordBean> historyRecordBeanList = new ArrayList<>();
     private int editeTotals=0;
     private boolean isSelectAll=false;
     public Boolean getEdit() {
         return isEdit;
     }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorites);
+        setContentView(R.layout.activity_history_record);
         findViewById();
         initAdapter();
         onClick();
     }
 
     private void initAdapter() {
-        favoritesBeanList.clear();
-        favoritesBeanList.add(new FavoritesBean("Doctor strange1","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
-        favoritesBeanList.add(new FavoritesBean("Doctor strange2","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
-        favoritesBeanList.add(new FavoritesBean("Doctor strange3","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
-        favoritesBeanList.add(new FavoritesBean("Doctor strange4","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
-        favoritesBeanList.add(new FavoritesBean("Doctor strange5","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
-        rv_favorites.setLayoutManager(new LinearLayoutManager(this));
-        favoritesAdapter=new FavoritesAdapter(favoritesBeanList,this);
-        rv_favorites.setAdapter(favoritesAdapter);
-        favoritesAdapter.callbackInterface = new FavoritesAdapter.CallbackInterface() {
+        historyRecordBeanList.clear();
+        historyRecordBeanList.add(new HistoryRecordBean("Doctor strange1","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
+        historyRecordBeanList.add(new HistoryRecordBean("Doctor strange2","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
+        historyRecordBeanList.add(new HistoryRecordBean("Doctor strange3","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
+        historyRecordBeanList.add(new HistoryRecordBean("Doctor strange4","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
+        historyRecordBeanList.add(new HistoryRecordBean("Doctor strange5","现代/剧情/爱情","安圣基/张根硕/张美姬/金太贤贤…","已更新至38集","9.0",true,false));
+        rv_history_record.setLayoutManager(new LinearLayoutManager(this));
+        historyRecordAdapter=new HistoryRecordAdapter(historyRecordBeanList,this);
+        rv_history_record.setAdapter(historyRecordAdapter);
+        historyRecordAdapter.callbackInterface = new HistoryRecordAdapter.CallbackInterface() {
             @Override
             public void callbackMethod(int position,int editeTotal) {
                 editeTotals=editeTotal;
@@ -156,7 +148,7 @@ public class FavoritesActivity  extends AppCompatActivity {
                     ll_edit_bottom.setVisibility(View.VISIBLE);
                     tv_edit.setText("Cancel");
                 }
-                favoritesAdapter.notifyDataSetChanged();
+                historyRecordAdapter.notifyDataSetChanged();
             }
         });
         ll_selectAll.setOnClickListener(new View.OnClickListener() {
@@ -164,20 +156,20 @@ public class FavoritesActivity  extends AppCompatActivity {
             public void onClick(View v) {
                 if(!isSelectAll){
                     isSelectAll=true;
-                    for(int i=0;i<favoritesBeanList.size();i++){
-                        favoritesBeanList.get(i).isCheck=true;
+                    for(int i=0;i<historyRecordBeanList.size();i++){
+                        historyRecordBeanList.get(i).isCheck=true;
                     }
-                    editeTotals=favoritesBeanList.size();
+                    editeTotals=historyRecordBeanList.size();
                     tv_del.setText("Delete ("+ editeTotals+")");
                 }else{
                     isSelectAll=false;
-                    for(int i=0;i<favoritesBeanList.size();i++){
-                        favoritesBeanList.get(i).isCheck=false;
+                    for(int i=0;i<historyRecordBeanList.size();i++){
+                        historyRecordBeanList.get(i).isCheck=false;
                     }
                     editeTotals=0;
                     tv_del.setText("Delete ("+ editeTotals+")");
                 }
-                favoritesAdapter.notifyDataSetChanged();
+                historyRecordAdapter.notifyDataSetChanged();
             }
         });
         ll_del.setOnClickListener(new View.OnClickListener() {
@@ -187,21 +179,22 @@ public class FavoritesActivity  extends AppCompatActivity {
                     ToastUtil.errorShortToast("Please select the item you want to delete");
                     return;
                 }
-                DelDialog.Builder builder= new DelDialog.Builder(FavoritesActivity.this);
-                builder.setInfo("Are you sure you want to delete your favorites ?");
-                builder.setButtonConfirm("Setting", new View.OnClickListener() {
+                DelDialog.Builder builder= new DelDialog.Builder(HistoryRecordActivity.this);
+                builder.setTitle("Historical record");
+                builder.setInfo("Confirm to delete history ?");
+                builder.setButtonConfirm("delete", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i=0;i<favoritesBeanList.size();i++){
-                            if(favoritesBeanList.get(i).isCheck==true){
-                                favoritesBeanList.remove(i);
+                        for(int i=0;i<historyRecordBeanList.size();i++){
+                            if(historyRecordBeanList.get(i).isCheck==true){
+                                historyRecordBeanList.remove(i);
                                 i--;
                             }
                         }
-                        favoritesAdapter.notifyDataSetChanged();
+                        historyRecordAdapter.notifyDataSetChanged();
                     }
                 });
-                builder.setButtonCancel("Close", new View.OnClickListener() {
+                builder.setButtonCancel("no", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
@@ -213,8 +206,8 @@ public class FavoritesActivity  extends AppCompatActivity {
     }
 
     private void findViewById() {
-        rv_favorites=findViewById(R.id.rv_favorites);
         ll_back=findViewById(R.id.ll_back);
+        rv_history_record=findViewById(R.id.rv_history_record);
         ll_edit=findViewById(R.id.ll_edit);
         ll_edit_bottom=findViewById(R.id.ll_edit_bottom);
         ll_selectAll=findViewById(R.id.ll_selectAll);

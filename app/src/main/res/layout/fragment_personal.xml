@@ -140,22 +140,28 @@
                       android:layout_width="0dp"
                       android:layout_height="wrap_content"
                       android:layout_weight="1"></LinearLayout>
-                  <TextView
-                      android:layout_gravity="center_vertical"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="more"
-                      android:textSize="12dp"
-                      android:textColor="@color/colorB7B7B7">
-                  </TextView>
-                  <ImageView
-                      android:layout_marginLeft="5dp"
-                      android:layout_marginRight="5dp"
-                      android:layout_gravity="center_vertical"
-                      android:layout_width="6dp"
-                      android:layout_height="10dp"
-                      android:background="@drawable/ic_more">
-                  </ImageView>
+                <LinearLayout
+                    android:id="@+id/ll_more"
+                    android:padding="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="more"
+                        android:textSize="12dp"
+                        android:textColor="@color/colorB7B7B7">
+                    </TextView>
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="6dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/ic_more">
+                    </ImageView>
+                </LinearLayout>
               </LinearLayout>
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_personal"

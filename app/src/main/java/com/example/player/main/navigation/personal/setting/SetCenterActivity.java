@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ import com.google.gson.Gson;
 public class SetCenterActivity  extends AppCompatActivity {
     MaterialButton btn_login_out,btn_switch_account;
     TextView tv_cache;
+    LinearLayout ll_back;
     RelativeLayout rl_clearCache;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +73,12 @@ public class SetCenterActivity  extends AppCompatActivity {
                 builder.create().show();
             }
         });
+        ll_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -95,6 +103,7 @@ public class SetCenterActivity  extends AppCompatActivity {
         btn_switch_account= findViewById(R.id.btn_switch_account);
         tv_cache=findViewById(R.id.tv_cache);
         rl_clearCache=findViewById(R.id.rl_clearCache);
+        ll_back=findViewById(R.id.ll_back);
     }
 
 

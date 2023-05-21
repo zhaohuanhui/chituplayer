@@ -30,7 +30,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Favorites list"
+                android:text="Hitstory record"
                 android:textColor="@color/color333333"
                 android:textSize="17dp">
             </TextView>

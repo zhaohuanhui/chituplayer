@@ -29,7 +29,7 @@ android {
             storeFile file('android.jks')
             storePassword 'android'
         }
-        shenzhenplayer{
+        HdMoviesBoxPro{
             keyAlias 'android'
             keyPassword 'android'
             storeFile file('android.jks')
@@ -42,10 +42,10 @@ android {
             signingConfig signingConfigs.guangzhouplayer
             buildConfigField 'String', 'APP_NAME', '"广州播放器"'
         }
-        shenzhenplayer{
-            applicationId = "com.example.shenzhenplayer"
-            signingConfig signingConfigs.shenzhenplayer
-            buildConfigField 'String', 'APP_NAME', '"深圳播放器"'
+        HdMoviesBoxPro{
+            applicationId = "com.example.hd_movies_box_pro"
+            signingConfig signingConfigs.HdMoviesBoxPro
+            buildConfigField 'String', 'APP_NAME', '"HD Movies Box Pro"'
         }
     }
 

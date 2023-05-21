@@ -188,6 +188,7 @@ public class FavoritesActivity  extends AppCompatActivity {
                     return;
                 }
                 DelDialog.Builder builder= new DelDialog.Builder(FavoritesActivity.this);
+                builder.setInfo("Are you sure you want to delete your favorites ?");
                 builder.setButtonConfirm("Setting", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
